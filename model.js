@@ -12,26 +12,38 @@ function Drawing() {
 	}.bind(this);
 }
 
-function Figure(couleur, epaisseur) {
+function Figure(couleur, epaisseur ) {
 	this.color = couleur;
 	this.strokeWidth = epaisseur;
 	
-	Figure.prototype.getColor = function(){
-		console.log(this.color)
+	/*Figure.prototype.getColor = function(){
+		//console.log(this.color)
 		return Figure.prototype.color;
 	}.bind(this)
 	Figure.prototype.getWidth = function(){
 		return Figure.prototype.strokeWidth
-	}.bind(this);
+	}.bind(this); */
 }
 
-function Rectangle(debutX,debutY,longueur,largeur,epaisseur,couleur) {
+function Rectangle(debutX,debutY,finX,finY,epaisseur,couleur) {
 	Figure.call(couleur,epaisseur);
+	//console.log(this.color)
+	//console.log(this.strokeWidth)
 	this.startX = debutX;
 	this.startY = debutY;
-	this.length = longueur;
-	this.height = largeur;
-	
+	this.endX = finX;
+	this.endY = finY;
+	//
+	this.color = couleur;
+	this.strokeWidth = epaisseur;
+	this.getColor = function(){
+		//console.log(this.color)
+		return this.color;
+	}.bind(this)
+	this.getWidth = function(){
+		return this.strokeWidth
+	}.bind(this); 
+	//
 	this.getInitX = function(){
 		return this.startX;
 	}.bind(this)
@@ -39,10 +51,11 @@ function Rectangle(debutX,debutY,longueur,largeur,epaisseur,couleur) {
 		return this.startY;
 	}.bind(this)
 	this.getFinalX = function(){
-		return (this.startX+this.length);
+		//return this.longueur;
+		return this.endX-this.startX
 	}.bind(this)
 	this.getFinalY = function(){
-		return (this.startY+this.height);
+		return this.endY-this.startY;
 	}.bind(this)
 	
 }
@@ -54,6 +67,17 @@ function Line(debutX,debutY,finX, finY,epaisseur,couleur) {
 	this.startY = debutY;
 	this.endX = finX;
 	this.endY = finY;
+	//
+	this.color = couleur;
+	this.strokeWidth = epaisseur;
+	this.getColor = function(){
+		//console.log(this.color)
+		return this.color;
+	}.bind(this)
+	this.getWidth = function(){
+		return this.strokeWidth
+	}.bind(this); 
+	//
 	this.getInitX = function(){
 		return this.startX;
 	}.bind(this)

@@ -2,6 +2,13 @@
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 
+//
+/*var butLine = document.getElementById('butLine');
+var butRect = document.getElementById('butRect');
+var spinner = document.getElementById('spinnerWidth');
+var colorButton = document.getElementById('colour');*/
+//
+
 canvas.width=800
 canvas.height=600
 
@@ -21,6 +28,6 @@ canvas.height=600
 
 // Code final à utiliser pour manipuler Pencil.
 var drawing = new Drawing();
-var pencil = new Pencil(ctx, drawing, canvas);
+var pencil = new Pencil(ctx, drawing, canvas/*,butLine,butRect,spinner,colorButton*/);
 drawing.paint(ctx, canvas);
 
